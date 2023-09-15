@@ -14,3 +14,8 @@ This project aims to develop a neural network model for the detection of pneumon
 ## The Problem Statement
 Pneumonia is a common lung infection caused by bacteria, a virus or fungi.It is a major cause of death among all age groups resulting in 2.56 million deaths worldwide in 2017. The diagnosis of pneumonia involves a physical exam followed by a chest X-ray. However, the interpretation of chest X-rays requires expert knowledge and can be time consuming.Morever, the accuracy of diagnosis can vary based on the experience and expertise of the radiologist.Since false diagnosis of pneumonia can lead to escalated medical conditions,increased risk of infection and incorect treatment,this has possed a problem to the KNH radiology team therefore, a need for an automated, reliable and efficient method to interpret chest X-rays and diagnose pneumonia.
 This project aims to develop a neural network model that can accurately detect pneumonia from chest X-rays images,thereby assisting radiologists in Kenyatta National Hospital in diagnosis,reducing the time taken for diagnosis and ultimately leading to timely treatment and improved patient outcomes.
+
+
+## The Main Objective
+To develop a neural network that can accurately and effectively detect pneumonia from the chest X-rays images, thereby assisting radiologists in diagnosis,reducing false diagnosis and time taken for diagnosis and ultimately leading to timely treatment and improved patient outcomes.
+
