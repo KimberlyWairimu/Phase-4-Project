@@ -65,5 +65,13 @@ In all three models, the F1 score remained constant at 0.6667 across all epochs 
 - The third model, which incorporated L2 regularization and dropout layers, achieved the highest recall on the test data (0.9513), indicating it was most successful at correctly identifying positive cases. This could potentially be a valuable tool for KNH Radiology and HIM departments in assisting with pneumonia diagnosis.
 
 
+## Recommendations
+- The CNN models developed can assist in identifying pneumonia cases from chest X-rays, thus aiding in faster and potentially more accurate diagnosis.
+- To further improve model performance and generalizability, consider exploring other techniques to mitigate overfitting such as early stopping.
+- Regular updates and retraining of the model with new data can help in maintaining its performance over time.
+- It’s important to note that while the model can aid in diagnosis, it should not replace professional medical advice and should be used as a supplementary tool.
+
+
+
 
 
