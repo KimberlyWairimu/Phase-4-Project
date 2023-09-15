@@ -30,3 +30,20 @@ To develop a neural network that can accurately and effectively detect pneumonia
 (iv) Build a neural network for pneumonia diagnosis and tune the model for the best results
 
 
+## Modelling
+Model 1: Basic CNN
+
+- Architecture: This model consists of a single convolutional layer, a pooling layer, a flattening layer, a fully connected layer, and an output layer. The convolutional layer uses 32 filters of size 3x3 and ‘relu’ activation function. The output layer uses ‘sigmoid’ activation function for the binary classification.Then the model is then compiled with adam optimizer and binary-crossentropy loss function due to the binary nature of the problem.
+
+- Perfomance: From the training results, it appears that the model is learning as the loss is decreasing over epochs. However, the validation loss seems to be fluctuating and not necessarily decreasing, which could be a sign of overfitting. The model shows a test recall of 0.8256 and F1 score of 0.7692.
+
+Model 2: CNN with L2 Regularization
+
+- Architecture: This model is similar to Model 1 but adds L2 regularization to the convolutional and fully connected layers. L2 regularization technique prevents overfitting by adding a penalty term to the loss function. The penalty term is proportional to the square of the magnitude of the weights, which encourages the model to have smaller weights and thus a simpler model.
+- Performance: The model shows improved performance with a test recall of 0.9205 and F1 score of 0.7692. However, the validation loss still fluctuates during training, indicating potential overfitting.The test results show a recall of 0.9205 and F1 score of 0.7692, which are better than your first model. This indicates that adding L2 regularization has improved the performance of your model.
+
+Model 3: CNN with Dropout and Additional Convolutional Layer
+
+- Architecture: This model adds more complexity by including an additional convolutional layer and dropout layers after each pooling layer and the fully connected layer. Dropout regularization technique randomly sets a fraction of input units to 0 at each update during training time, which helps prevent overfitting.
+- Performance: The model shows further improved performance with a test recall of 0.9513 and F1 score of 0.7692. 
+
