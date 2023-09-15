@@ -57,3 +57,13 @@ Model 3: CNN with Dropout and Additional Convolutional Layer
 
 In all three models, the F1 score remained constant at 0.6667 across all epochs for both training and validation sets. Despite signs of overfitting in all three models, each subsequent model showed improvement in recall on the test data compared to its predecessor.
 
+
+## Conclusions
+- The group of pneumonia cases has pixel values closer to 1 which might be due to the patchy consolidated area that indicates pneumonia in X-rays. 
+- The chest X-rays of pneumonia cases appear to have distinct features compared to those of non-pneumonia cases . This indicates that the model can potentially learn these patterns to distinguish between pneumonia and non-pneumonia cases.
+- All three models learned from the training data, as indicated by decreasing loss over epochs. However, they also showed signs of overfitting as indicated by increasing validation loss after the second epoch. Despite this, each subsequent model showed improvement in recall on the test data compared to its predecessor. This means each model was able to correctly identify more positive cases.
+- The third model, which incorporated L2 regularization and dropout layers, achieved the highest recall on the test data (0.9513), indicating it was most successful at correctly identifying positive cases. This could potentially be a valuable tool for KNH Radiology and HIM departments in assisting with pneumonia diagnosis.
+
+
+
+
