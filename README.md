@@ -47,3 +47,13 @@ Model 3: CNN with Dropout and Additional Convolutional Layer
 - Architecture: This model adds more complexity by including an additional convolutional layer and dropout layers after each pooling layer and the fully connected layer. Dropout regularization technique randomly sets a fraction of input units to 0 at each update during training time, which helps prevent overfitting.
 - Performance: The model shows further improved performance with a test recall of 0.9513 and F1 score of 0.7692. 
 
+
+## Modelling Results
+- Model 1 (Basic CNN): Showed signs of overfitting as the validation loss increased after the second epoch. It achieved a test loss of 0.9253, recall of 0.8256, and F1 score of 0.7692.
+
+- Model 2 (CNN with L2 Regularization): Despite adding L2 regularization, this model also showed signs of overfitting. However, it improved in terms of training loss and recall compared to Model 1. The test loss was 0.8105, with a recall of 0.9205, and an F1 score of 0.7692.
+
+- Model 3 (CNN with L2 Regularization and Dropout): This model added dropout layers and an additional convolutional layer to learn more complex features. Despite these additions, it still showed potential overfitting. The test results showed a loss of 0.7303, recall of 0.9513, and an F1 score of 0.7692.
+
+In all three models, the F1 score remained constant at 0.6667 across all epochs for both training and validation sets. Despite signs of overfitting in all three models, each subsequent model showed improvement in recall on the test data compared to its predecessor.
+
