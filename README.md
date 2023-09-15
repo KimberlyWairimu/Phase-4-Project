@@ -72,6 +72,12 @@ In all three models, the F1 score remained constant at 0.6667 across all epochs 
 - It’s important to note that while the model can aid in diagnosis, it should not replace professional medical advice and should be used as a supplementary tool.
 
 
+## Next Steps
+- Model Integration: Beginning the process of integrating the model with existing hospital information systems.
+- Performance Monitoring System: Set up a system for continuously monitoring the model’s performance in a real-world setting. 
+- Staff Training: Planning and executing a training program for relevant staff members. This should cover how to use the model, interpret its results, and understand its limitations.
+
+
 
 
 
