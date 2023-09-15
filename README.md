@@ -19,3 +19,14 @@ This project aims to develop a neural network model that can accurately detect p
 ## The Main Objective
 To develop a neural network that can accurately and effectively detect pneumonia from the chest X-rays images, thereby assisting radiologists in diagnosis,reducing false diagnosis and time taken for diagnosis and ultimately leading to timely treatment and improved patient outcomes.
 
+
+## Specific Objectives
+(i) Analyze the characteristics of chest X-ray images of pneumonia cases and compare them to those without.
+
+(ii) Identify potential correlations or patterns in chest X-ray images that might be indicative of pneumonia.
+
+(iii) Evaluate the quality and usability of the data for model training
+
+(iv) Build a neural network for pneumonia diagnosis and tune the model for the best results
+
+
