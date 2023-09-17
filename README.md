@@ -29,33 +29,44 @@ To develop a neural network that can accurately and effectively detect pneumonia
 
 (iv) Build a neural network for pneumonia diagnosis and tune the model for the best results
 
+ 
+ ## Data Understanding
+ The data is from Chest X-ray images (anterior-posterior)  selected from retrospective cohorts of pediatric patients of one to five years old from Guangzhou Women and Children’s Medical Center.The data has 3 sets. The training set , the validation set and the test set. The train set contains 5216 images,1341 X_rays of normal cases and 3875 of pneumonia cases.The validation set contains 16 images with equal number of images of both the normal cases and the pneumonia cases.The test dataset contains 624 images,with 234 images of normal cases and 390 images of pneumonia cases.Each of these images vary in size, brightness and contrast.Both the test and the training datasets have class imbalance.Images of pneumonia cases show a distict feature of a patchy and consolidated area in the lungs which might help the CNN model distinguish between the two cases.
+
 
 ## Modelling
 Model 1: Basic CNN
 
-- Architecture: This model consists of a single convolutional layer, a pooling layer, a flattening layer, a fully connected layer, and an output layer. The convolutional layer uses 32 filters of size 3x3 and ‘relu’ activation function. The output layer uses ‘sigmoid’ activation function for the binary classification.Then the model is then compiled with adam optimizer and binary-crossentropy loss function due to the binary nature of the problem.
+- Architecture: The model is a simple Convolutional Neural Network (CNN) with one convolutional layer, one max pooling layer, a flatten layer, and two dense layers. The final layer uses a sigmoid activation function for binary classification.
+- Performance: The model achieved an accuracy of approximately 43% on the test data, and a recall of approximately 56% for identifying ‘Pneumonia’ cases.
 
-- Perfomance: From the training results, it appears that the model is learning as the loss is decreasing over epochs. However, the validation loss seems to be fluctuating and not necessarily decreasing, which could be a sign of overfitting. The model shows a test recall of 0.8256 and F1 score of 0.7692.
+Model 2: CNN with an additional convolutional layer and class weights
 
-Model 2: CNN with L2 Regularization
-
-- Architecture: This model is similar to Model 1 but adds L2 regularization to the convolutional and fully connected layers. L2 regularization technique prevents overfitting by adding a penalty term to the loss function. The penalty term is proportional to the square of the magnitude of the weights, which encourages the model to have smaller weights and thus a simpler model.
-- Performance: The model shows improved performance with a test recall of 0.9205 and F1 score of 0.7692. However, the validation loss still fluctuates during training, indicating potential overfitting.The test results show a recall of 0.9205 and F1 score of 0.7692, which are better than your first model. This indicates that adding L2 regularization has improved the performance of your model.
-
-Model 3: CNN with Dropout and Additional Convolutional Layer
-
-- Architecture: This model adds more complexity by including an additional convolutional layer and dropout layers after each pooling layer and the fully connected layer. Dropout regularization technique randomly sets a fraction of input units to 0 at each update during training time, which helps prevent overfitting.
-- Performance: The model shows further improved performance with a test recall of 0.9513 and F1 score of 0.7692. 
+- Architecture: The model is a Convolutional Neural Network (CNN) with two convolutional layers, each followed by a max pooling layer, a flatten layer, and two dense layers.
+- Performance: The model achieved an accuracy of approximately 49% on the test data, and a recall of approximately 72% for identifying ‘Pneumonia’ cases
 
 
-## Modelling Results
-- Model 1 (Basic CNN): Showed signs of overfitting as the validation loss increased after the second epoch. It achieved a test loss of 0.9253, recall of 0.8256, and F1 score of 0.7692.
+Model 3: CNN with L2 regularization
 
-- Model 2 (CNN with L2 Regularization): Despite adding L2 regularization, this model also showed signs of overfitting. However, it improved in terms of training loss and recall compared to Model 1. The test loss was 0.8105, with a recall of 0.9205, and an F1 score of 0.7692.
+ - Architecture: The model is a Convolutional Neural Network (CNN) with two convolutional layers, each followed by a max pooling layer, a flatten layer, and two dense layers. It also includes L2 regularization in the convolutional layers to prevent overfitting.
+- Performance: The model achieved an accuracy of approximately 54% on the test data, and a recall of approximately 80% for identifying ‘Pneumonia’ cases. This suggests that the model correctly identified whether pneumonia was present in about 54% of the test images, and it correctly identified 80% of all actual ‘Pneumonia’ cases in the test data.
 
-- Model 3 (CNN with L2 Regularization and Dropout): This model added dropout layers and an additional convolutional layer to learn more complex features. Despite these additions, it still showed potential overfitting. The test results showed a loss of 0.7303, recall of 0.9513, and an F1 score of 0.7692.
+## Modelling results
+Model 1 (Simple CNN):
 
-In all three models, the F1 score remained constant at 0.6667 across all epochs for both training and validation sets. Despite signs of overfitting in all three models, each subsequent model showed improvement in recall on the test data compared to its predecessor.
+Accuracy: 43%
+Recall (Pneumonia): 56%
+This model had a relatively high number of false positives and false negatives, suggesting it often incorrectly classified instances.
+Model 2 (CNN with additional convolutional layer and class weights):
+
+Accuracy: 49%
+Recall (Pneumonia): 72%
+This model showed some improvements in terms of accuracy and recall compared to Model 1. However, the precision for the ‘No Pneumonia’ class was quite low, suggesting that the model might be over-predicting the ‘Pneumonia’ class due to the use of class weights.
+Model 3 (CNN with L2 Regularization and class weights):
+
+Accuracy: 53%
+Recall (Pneumonia): 80%
+This model showed further improvements in terms of accuracy and recall compared to the previous models. However, similar to Model 2, the precision for the ‘No Pneumonia’ class was quite low.
 
 
 ## Conclusions
